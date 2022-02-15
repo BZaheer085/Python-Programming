@@ -1,0 +1,102 @@
+---
+title: "Doc"
+author: "Bilal"
+date: "15/02/2022"
+output: html_document
+---
+```{r}
+
+# Task 1. Write an R program to create three vectors a, b, c with integers. Combine the three vectors to become a 3×5 matrix where each column represents a vector. Print the content of the matrix. Plot a graph and label correctly.
+
+a<-c(1,2,3)
+b<-c(4,5,6)
+c<-c(7,8,9)
+matrix<-cbind(a,b,c)
+print("Content of the matrix:")
+print(matrix)
+
+```
+```{r}
+#Task 2. Write a R program to create a Data frames which contain      details of 5 employees and display the details. (Name, Age, Role and Length of service).
+
+employees = data.frame(Name=c(" Bilal Zaheer"," David Thomas"," Queen                                   Elizebeth", "Dave Barnes","Cleopetra"), 
+                       Age=c(35,40,100,55,25),
+                  Role=c("Engineer","Manager","CEO","Accountant","Business Analyst"),
+                  LengthOfService=c("1","10","50","15","3")
+)
+print("Details of the employees:")                      
+print(employees)
+```
+```{r}
+#Task 3. Import the GGPLOT 2 library and plot a graph using the qplot function. X axis is the sequence of 1:20 and the y axis is the x ^ 2.
+library(ggplot2)
+x <- 1:10; y = x*x
+# Basic plot
+qplot(x,y)
+```
+```{r}
+#Task 4. Create a simple bar plot of five subjects
+
+marks_subjects = c(60, 85, 99, 75)
+barplot(marks_subjects,
+        main = "Comparing marks of 5 subjects",
+        xlab = "Subjects",
+        ylab = "Marks",
+        names.arg = c("Maths", "Physics", "English", "Psychology"),
+        col = "Blue",
+        horiz = FALSE)
+```
+```{r}
+#Task 5. Write a R program to take input from the user (name and        age) and display the values.
+
+name = readline(prompt="Enter your name: ")
+age =  readline(prompt="Enter your age: ")
+print(paste("My name is",name, "and I am",age ,"years old."))
+print(R.version.string)
+```
+```{r}
+# Task 6. Write a R program to create a sequence of numbers from 20 to 50 and find the mean of numbers from 20 to 50 and sum of numbers.
+
+print("Sequence of numbers from 20 to 50:")
+print(seq(20,50))
+print("Mean of numbers from 20 to 50:")
+print(mean(20:50))
+print("Sum of numbers from 20 to 50:")
+print(sum(20:50))
+```
+```{r}
+# Task 7. Write a R program to create a vector which contains 10
+#         random integer values between -50 and +50
+vector = sample(-50:50, 10, replace=TRUE)
+print("Random values between -50 and +50:")
+print(vector)
+```
+```{r}
+# Optional Task 1. Write a R program to get the first 10 Fibonacci      numbers.
+
+Fibonacci <- numeric(10)
+Fibonacci[1] <- Fibonacci[2] <- 1
+for (i in 3:10) Fibonacci[i] <- Fibonacci[i - 2] + Fibonacci[i - 1]
+print("First 10 Fibonacci numbers:")
+print(Fibonacci)
+```
+```{r}
+# Optional Task 2. Write a R program to print the numbers from 1 to 100 and print "Fizz" for multiples of 3, print "Buzz" for multiples of 5, and print "FizzBuzz" for multiples of both.
+
+for (i in 1:100) {
+  if (i %% 3 == 0 & i %% 5 == 0) 
+  {
+    print("FizzBuzz")
+    }
+  else if (i %% 3 == 0) 
+  {
+    print("Fizz")
+    }
+  else if (i %% 5 == 0) 
+  {
+    print("Buzz")
+    }
+  else print(i)
+}
+```
+
